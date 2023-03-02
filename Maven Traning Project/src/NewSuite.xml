@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="new Suite">
+    <parameter name="browser" value="chrome"></parameter>
+    <test name="New Test">
+        <classes>
+            <class name="wikiTest"></class>
+        </classes>
+    </test>
+</suite>

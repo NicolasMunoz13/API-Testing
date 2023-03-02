@@ -1,0 +1,36 @@
+package alerts;
+
+import base.BaseTests;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
+
+public class AlertTest extends BaseTests {
+
+    @Test
+    public void testAcceptAlert(){
+        var alertspage = homePage.clickJavaScriptAlerts();
+        alertspage.triggerAlert();
+        alertspage.alert_clickToAccept();
+        assertEquals(alertspage.getText(), "You successfully clicked an alert", "Text Incorrect");
+    }
+
+    @Test
+    public void testGetTextFromAlert(){
+        var alertsPage = homePage.clickJavaScriptAlerts();
+        alertsPage.triggerConfirm();
+        String text = alertsPage.alert_getText();
+        alertsPage.alert_clickToDismiss();
+        assertEquals(text, "I am a JS Confirm", "Alert text incorrect");
+    }
+
+    @Test
+    public void testSetInputAlert(){
+        var alertsPage = homePage.clickJavaScriptAlerts();
+        alertsPage.triggerPrompt();
+        String text = "TAU Rocks!";
+        alertsPage.alert_setInput(text);
+        alertsPage.alert_clickToAccept();
+        assertEquals(alertsPage.getText(), "You entered: " + text, "Result text is incorrect");
+    }
+}

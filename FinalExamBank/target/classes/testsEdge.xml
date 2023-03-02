@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Bank Form Tests">
+    <parameter name="amount" value="5000000"></parameter>
+    <parameter name="months" value="12"></parameter>
+    <parameter name="dropDownOption" value="Gastos Personales"></parameter>
+    <parameter name="yearDate" value="1994"></parameter>
+    <parameter name="monthDate" value="marzo"></parameter>
+    <parameter name="testBirthDate" value="1994/03/18"></parameter>
+    <parameter name="currentYear" value="2022"></parameter>
+    <parameter name="browser" value="edge"></parameter>
+    <test name="FormTestMEdge">
+        <parameter name="amountResultTest" value="5000000"></parameter>
+        <parameter name="monthsResultTest" value="12"></parameter>
+        <parameter name="dropDownOptionResultTest" value="Gastos Personales"></parameter>
+        <parameter name="yearDateTest" value="1994"></parameter>
+        <classes>
+            <class name="tests.Form.FormTest"></class>
+        </classes>
+    </test>
+</suite>
